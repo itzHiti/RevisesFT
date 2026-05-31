@@ -1,0 +1,6 @@
+name: RevisesFT
+version: '${version}'
+main: kz.itzhiti.revisesft.RevisesFT
+api-version: '1.16'
+authors: [itzHiti]
+description: Модный плагин на проверки игроков с FunTime

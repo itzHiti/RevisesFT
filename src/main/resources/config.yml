@@ -1,0 +1,495 @@
+# Настройки плагина RevisesFT
+
+storage:
+  type: h2 # h2 / mysql
+  h2:
+    file: database/revises
+  mysql:
+    host: localhost
+    port: 3306
+    database: revises
+    user: root
+    password: ""
+    params: useSSL=false&characterEncoding=utf8
+
+revise:
+  defaultSeconds: 180 # стартовое время, сек
+  maxAdditionalSeconds: 180 # максимум, который можно добавить одной командой
+
+  addtime-limits:
+    default:
+      seconds: 180
+    admin: # хз, может пригодится
+      permission: "revises.addtime.admin"
+      seconds: 1800
+
+  spawn-location: "world,0,100,0,0,0"
+
+  timeout-punishment: "warn %player% Пункт 4.3 -s"
+
+  freeze-quit-punishment: "warn %player% Пункт 4.3 -s"
+
+  confession:
+    messages:
+      - "У меня чит"
+    reason: "Признание"
+    command: "warn %player% Пункт 4.3 -s"
+
+  time-after-leave: 150
+
+  sounds:
+    start:
+      type: "ENTITY_DOLPHIN_JUMP"
+      volume: 2.0
+      pitch: 0.5
+    addtime:
+      type: "BLOCK_BREWING_STAND_BREW"
+      volume: 2.0
+      pitch: 0.5
+    leave:
+      type: "BLOCK_ANVIL_LAND"
+      volume: 2.0
+      pitch: 0.5
+    remote:
+      type: "ENTITY_ELDER_GUARDIAN_CURSE"
+      volume: 2.0
+      pitch: 0.6
+    chat:
+      type: "ENTITY_CHICKEN_EGG"
+      volume: 2.0
+      pitch: 0.75
+
+  freeze-reasons:
+    - "DISCONNECTED"
+    - "KICKED"
+    - "ERRONEOUS_STATE"
+
+  rooms:
+    1:
+      location: "world,100,64,100,0,0"
+    2:
+      location: "world,200,64,200,0,0"
+
+  rewards:
+    clear-any:
+      material: NETHER_STAR
+      name: "&c[★] &eТрофей &6%player%"
+      lore:
+        - "&c╔ &fПолучен от &cАдминистрации&f,"
+        - "&c╠ &fза честную игру на &6FunTime"
+        - "&c╠ &fВедь после проверки на читы,"
+        - "&c╠ &fигрок оказался &a&nчистым&f!"
+        - "&c╠"
+        - "&c╠ &fНик: &6%player%"
+        - "&c╚ &fДата: &6%date%"
+      enchantments:
+        UNBREAKING: 1
+      attributes:
+        HideEnchants: true
+  
+  finish-reasons:
+    clear:
+      beta:
+        - "чист(beta)"
+        - "чист(бета)"
+      alpha:
+        - "чист(alpha)"
+        - "чист(альфа)"
+      alpha+:
+        - "чист(alpha+)"
+        - "чист(альфа+)"
+      method:
+        - "чист(method)"
+        - "чист(метод)"
+    warn:
+      4.3:
+        reasons:
+          "Disconnect": # как будет отображаться в причине в БД
+            - "Disconnect" # как можно вводить
+            - "выход"
+            - "дисконнект"
+            - "лив"
+          "Delete(варн)":
+            - "Delete(варн)"
+          "Recycle":
+            - "Recycle"
+            - "Корзина"
+            - "Очистка-корзины"
+          "Обход":
+            - "Обход"
+          "Оскорбление":
+            - "Оскорбление"
+          "Отказ":
+            - "Отказ"
+          "Откуп":
+            - "Откуп"
+          "Помеха":
+            - "Помеха"
+          "Признание(варн)":
+            - "Признание(варн)"
+            - "Признание"
+          "Таймер":
+            - "Таймер"
+          "Удаление(варн)":
+            - "Удаление(варн)"
+        actions:
+          - "warn %player% Пункт 4.3 -s"
+      4.3.1:
+        reasons:
+          "Akrien":
+            - "Akrien"
+            - "акриен"
+          "Aristois":
+            - "Aristois"
+            - "аристоис"
+          "Baritone(варн)":
+            - "Baritone(варн)"
+            - "Баритон(варн)"
+          "FreeCam":
+            - "FreeCam"
+            - "фрикам"
+          "Impact":
+            - "Impact"
+            - "импакт"
+          "Inertia":
+            - "Inertia"
+            - "инертиа"
+          "Wurst":
+            - "Wurst"
+            - "вурст"
+          "XRay":
+            - "XRay"
+            - "xрей"
+        actions:
+          - "warn %player% Пункт 4.3.1 -s"
+      4.3.2:
+        reasons:
+          "Badlion":
+            - "Badlion"
+            - "бадлион"
+          "Bleach":
+            - "Bleach"
+            - "бличхак"
+          "ChestStealer":
+            - "ChestStealer"
+            - "честстилер"
+          "ChunkAnimator":
+            - "ChunkAnimator"
+            - "чанканиматор"
+          "FeatherLauncher":
+            - "FeatherLauncher"
+          "FlashBack":
+            - "FlashBack"
+          "HealthBarPlus":
+            - "HealthBarPlus"
+            - "хилбарплюс"
+          "Hwyla":
+            - "Hwyla"
+            - "хвула"
+          "InventoryProfilesNext":
+            - "InventoryProfilesNext"
+            - "инвенторипрофильнекст"
+          "InventoryTotem":
+            - "InventoryTotem"
+            - "инвенторитотем"
+          "LiteMatica":
+            - "LiteMatica"
+          "Minimap":
+            - "Minimap"
+            - "миникарта"
+          "MobHealthBar":
+            - "MobHealthBar"
+            - "мобхилбар"
+          "Neat":
+            - "Neat"
+            - "неат"
+          "ReplayMod":
+            - "ReplayMod"
+            - "реплеймод"
+          "Schematica":
+            - "Schematica"
+            - "схематикa"
+          "TrueSight":
+            - "TrueSight"
+            - "трусичт"
+          "WorldEdit":
+            - "WorldEdit"
+            - "ворлдедит"
+        actions:
+          - "warn %player% Пункт 4.3.2 -s"
+    tempban:
+      4.3:
+        14d:
+          reason: "Прочее(14дней)"
+          action: "tempban %player% 14d Пункт 4.3"
+        31d:
+          reason: "Прочее(31день)"
+          action: "tempban %player% 31d Пункт 4.3"
+      4.3.1:
+        reasons:
+          "AdvancedCompass(Компас)":
+            - "AdvancedCompass(Компас)"
+          "LiquidBounce":
+            - "LiquidBounce"
+            - "ликвидбаунс"
+          "Phasma":
+            - "Phasma"
+            - "фазма"
+        actions:
+          - "tempban %player% 14d Пункт 4.3.1"
+      4.3.2:
+        reasons:
+          "AutoAttack":
+            - "AutoAttack"
+            - "автоатак"
+          "AutoBuy(хранение)":
+            - "AutoBuy(хранение)"
+            - "автобай(хранение)"
+          "AutoMyst(хранение)":
+            - "AutoMyst(хранение)"
+            - "автомист(хранение)"
+          "AutoSell(хранение)":
+            - "AutoSell(хранение)"
+            - "автоселл(хранение)"
+          "Betterpvp":
+            - "Betterpvp"
+            - "беттерпвп"
+          "CleanCut":
+            - "CleanCut"
+          "DiamondGen":
+            - "DiamondGen"
+            - "даймондген"
+          "Imperator":
+            - "Imperator"
+          "MatHax":
+            - "MatHax"
+            - "матхакс"
+          "NoRender":
+            - "NoRender"
+            - "норендер"
+          "TopkaCasino(хранение)":
+            - "TopkaCasino(хранение)"
+            - "топкаказино(хранение)"
+        actions:
+          - "tempban %player% 14d Пункт 4.3.2"
+      4.2:
+        31d:
+          reasons:
+            - "FunPay(31день)"
+            - "Фанпей(31день)"
+          action: "tempban %player% 31d Пункт 4.2 -s"
+        93d:
+          reasons:
+           - "FunPay(93дня)"
+           - "Фанпей(93дня)"
+          action: "tempban %player% 93d Пункт 4.2 -s"
+        permanent:
+          reasons:
+           - "FunPay(навсегда)"
+           - "Фанпей(навсегда)"
+          action: "ban %player% Пункт 4.2 -s"
+    ban:
+      4.3:
+        reasons:
+          "Decision":
+            - "Decision"
+            - "десижион"
+          "Delete(навсегда)":
+            - "Delete(навсегда)"
+            - "Удаление(навсегда)"
+          "Hider":
+            - "Hider"
+          "NewLauncher":
+            - "NewLauncher"
+          "ProxyCheat":
+            - "ProxyCheat"
+          "SoftHider":
+            - "SoftHider"
+            - "софтхайдер"
+          "Takker":
+            - "Takker"
+            - "таккер"
+          "Xameleon":
+            - "Xameleon"
+          "Признание(навсегда)":
+            - "Признание(навсегда)"
+          "Прочее(навсегда)":
+            -  "Прочее(навсегда)"
+        actions:
+          - "ban %player% Пункт 4.3"
+      4.3.1:
+        reasons:
+          "404client":
+            - "404client"
+            - "404клиент"
+          "Aegis":
+            - "Aegis"
+          "Ammit":
+            - "Ammit"
+            - "аммит"
+          "Arbuz":
+            - "Arbuz"
+            - "арбуз"
+          "AutoBuy":
+            - "AutoBuy"
+            - "автобай"
+          "AutoMyst":
+            - "AutoMyst"
+            - "автомист"
+          "AutoSell":
+            - "AutoSell"
+            - "автоселл"
+          "Avalone":
+            - "Avalone"
+            - "авалон"
+          "Baritone(навсегда)":
+            - "Baritone(навсегда)"
+            - "баритон(навсегда)"
+          "Blessed":
+            - "Blessed"
+            - "блессед"
+          "Britva":
+            - "Britva"
+            - "бритва"
+          "Catlavan":
+            - "Catlavan"
+            - "катлаван"
+          "Celestial":
+            - "Celestial"
+            - "селестиал"
+            - "целестиал"
+          "Centric":
+            - "Centric"
+            - "центрик"
+          "Cortex":
+            - "Cortex"
+            - "кортекс"
+          "Crack":
+            - "Crack"
+            - "кряк"
+          "DarkProject":
+            - "DarkProject"
+          "DeadCode":
+            - "DeadCode"
+            - "дедкод"
+          "Delight":
+            - "Delight"
+            - "делайт"
+          "Delta":
+            - "Delta"
+            - "дельта"
+          "Dll-inject":
+            - "Dll-inject"
+          "DoomsDay":
+            - "DoomsDay"
+            - "думсдей"
+            - "думик"
+          "DreamPool":
+            - "DreamPool"
+            - "дримпул"
+          "Excellent":
+            - "Excellent"
+            - "экселлент"
+          "Expensive":
+            - "Expensive"
+            - "экспенсив"
+          "FlugerClient":
+            - "FlugerClient"
+          "Hachrecode":
+            - "Hachrecode"
+            - "хачрекод"
+          "InjectHB":
+            - "InjectHB"
+            - "инжектхиты"
+          "Kwish":
+            - "Kwish"
+            - "квиш"
+          "Meteor":
+            - "Meteor"
+            - "метеор"
+          "Minced":
+            - "Minced"
+            - "минсед"
+          "MoonLight":
+            - "MoonLight"
+          "MoonProject":
+            - "MoonProject"
+          "NeverixClient":
+            - "NeverixClient"
+          "Newcode":
+            - "Newcode"
+            - "ньюкод"
+          "Newlight":
+            - "Newlight"
+            - "ньюлайт"
+          "NightDLC":
+            - "NightDLC"
+            - "найтдлс"
+          "Niobium":
+            - "Niobium"
+            - "ниобиум"
+          "Nixclient":
+            - "Nixclient"
+            - "никсклиент"
+          "Nursultan":
+            - "Nursultan"
+            - "нурсултан"
+          "Quick":
+            - "Quick"
+            - "квик"
+          "Relake":
+            - "Relake"
+            - "релейк"
+          "Rich":
+            - "Rich"
+            - "рич(клиент)"
+          "Rockstar":
+            - "Rockstar"
+            - "рокстар"
+          "ThunderHack":
+            - "ThunderHack"
+            - "тандерхак"
+          "TopkaCasino":
+            - "TopkaCasino"
+            - "топкаказино"
+          "Troxill":
+            - "Troxill"
+            - "троксил"
+          "Vape":
+            - "Vape"
+            - "вайп"
+          "Vec":
+            - "Vec"
+          "Venus":
+            - "Venus"
+            - "венус"
+          "Verist":
+            - "Verist"
+          "Wexside":
+            - "Wexside"
+            - "вексайд"
+          "Wild":
+            - "Wild"
+            - "Вайлд"
+            - "Вилд"
+          "Wissend":
+            - "Wissend"
+            - "виссенд"
+        actions:
+          - "ban %player% Пункт 4.3.1"
+      4.3.2:
+        reasons:
+          "Ghost":
+            - "Ghost"
+            - "гостклиент"
+          "Hitboxes":
+            - "Hitboxes"
+            - "хитбоксы"
+          "Nemezida":
+            - "Nemezida"
+            - "немезида"
+          "Neverbuy":
+            - "Neverbuy"
+            - "невербай"
+        actions:
+          - "ban %player% Пункт 4.3.2"

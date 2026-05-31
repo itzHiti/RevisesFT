@@ -1,0 +1,136 @@
+# Конфиг сообщений
+messages:
+  only-players: "&c> &fКоманда доступна только игрокам."
+  no-permission: "&c> &fУ вас нет прав на выполнение этой команды."
+  revise:
+    help:
+      - "&cПроверки - помощь:"
+      - "&c/revise &e- показать помощь"
+      - "&c/revise start &7[ник] &e- Начать проверку (нужно находиться в КП)"
+      - "&c/revise start &7[ник] [номер комнаты] &e- Начать проверку (выбирайте пустую комнату)"
+      - "&c/revise finish &7[причина] &e- Завершить проверку."
+      - "&c/revise stop &e- Принудительно завершить проверку."
+      - "&c/revise addtime &7[время / до 30m] &e- Добавить время ожидания"
+      - "&c/revise remote &e- Обозначить, что проверка будет проводиться по AnyDesk"
+      - "&c/revise active &e- Показать активные проверки"
+      - "&c/revise logs &7[ник] &e- Показать логи проверок игрока"
+    invalid-usage:
+      default: "&c> &fНекорректно введена команда."
+      finish: "&c> &fУкажите комментарий завершения проверки."
+    start: "&6> &fВызываем на проверку игрока &6%player%&f. Комната &6%room%"
+    stop: "&c> &fПроверка остановлена."
+    finish: "&6> &fПроверка завершена."
+    addtime: "&6> &fВремя для ожидания успешно добавлено."
+    addtime-limit: "&c> &fВы не можете добавить больше &6%time%&f."
+    addtime-limited: "&c> &fМаксимальное время %time% уже выдано."
+    remote: "&6> &fТаймер установлен в режим: %mode%"
+    modes:
+      - "anydesk"
+      - "rustdesk"
+    not-found:
+      report: "&c> &fРепорт не найден."
+      player: "&c> &fИгрок &6%player% &fоффлайн"
+    not-started: "&c> &fПроверка ещё не началась."
+    not-available: "&c> &fПроводятся технические работы, это займёт не более 1-3 минут."
+    already-revising: "&c> &fДанный игрок уже находится на проверке."
+    already-revising-other: "&c> Один из репортов ранее был взят на рассмотрение."
+    self: "&c> &fВы не можете вызвать себя на проверку."
+    room-not-found: "&c> &fКомната &6%room% &fне найдена в конфиге."
+    room-occupied: "&c> &fКомната &6%room% &fуже занята другой проверкой."
+    no-available-rooms: "&c> &fНет свободных комнат для проверки."
+    cannot-revise: "&c> &fВы не можете вызвать %player% на проверку."
+    player-leave:
+      freeze:
+        text: "\n &c> &fИгрок вышел во время проверки с причиной - %reason% \n" # Типы - DISCONNECTED, KICKED, ERRONEOUS_STATE
+      remote:
+        text: "&c> &fИгрок вышел во время проверки! %button%"
+        button: "&c[&6Забанить&c]"
+        action: "/revise finish Дисконнект"
+    player-joined:
+      text:
+        - "&4» &fСтатус: &aПодключён"
+        - "&4» &fПодозреваемый &c%player% [%discordid%]"
+        - "&4» &fКомната &6%room% %button%"
+      button: "&6[&eПодключиться&6]"
+      action: "/joindiscordchannel %discordroomid%"
+    active:
+      none: "&c> &fНет активных проверок."
+      header: "&cПроверки - активные:"
+      lines:
+      - "&e%number%. &6%player% &f| Комната: &6%room% &f| статус: &6%status% &f| Время до конца: &6%time% &f| Проверяющий: &6%moderator%"
+    logs:
+      none: "&c> &fНет проверок в логах."
+      header: "&cПроверки - логи:"
+      lines:
+          - "&e%number%. &6%player% &f| Комната: &6%room% &f| Длительность: &6%time% &f| Результат: &6%result% &f| Ранг проверки: &6%rank% &f| Причина: &6%comment% &f| Проверяющий: &6%moderator% &f| Дата: &6%date%"
+
+  revise-player:
+    start:
+      message:
+        - "&r "
+        - "&r "
+        - "&c╔═══════════════════════════"
+        - "&c╠ Вы были вызваны на проверку читов!"
+        - "&c╠"
+        - "&c╠ &6Выход из игры, игнор проверки - приведёт к &cбану"
+        - "&c╠ &6Напишите '&eУ меня чит&6' - если используйете читы"
+        - "&c╠ &7&o(за признание в читах - уменьшим срок бана)"
+        - "&c╠"
+        - "&c╠ &6Проверка выполняется через &cAnyDesk&6 или &cRustDesk&6."
+        - "&c╠"
+        - "&c╠ &cAnyDesk: &9https://download.anydesk.com/AnyDesk.exe"
+        - "&c╠ &cRustDesk: &9https://github.com/16Depression16/FRI/releases"
+        - "&c╠ &7(зеркало) &9https://cloud.mail.ru/public/an9A/bPWhDxRav"
+        - "&c╠"
+        - "&c╠ &6После установки отправьте:"
+        - "&c╠ &e/anydesk <цифры> &6или &e/rustdesk <цифры>"
+        - "&c╚═══════════════════════════"
+      period: 2
+    addtime: "&6> &fВам добавили время проверки на &6%time%"
+    success-finish:
+        - "&r "
+        - "&r "
+        - "&r "
+        - "&c╔══ [★] Поздравляем!"
+        - "&c╠ &fВы &aуспешно &fпрошли проверку на читы!"
+        - "&c╠ &9Спасибо&f, что играете справедливо."
+        - "&c╠ &fВ качестве вознаграждения"
+        - "&c╠ &fвы получили &eличный Трофей&f!"
+        - "&c╚═══════════════════════════"
+    cooldown: "&4&l> &fПодождите &6%time%&f, чтобы писать в чат.\n"
+    chat: "\n &e[&6Вы &7» &6Проверяющий&e] &7» &c%message%"
+    chat-from: "\n &e[&6Проверяющий &7» &6Вы&e] &7» &c%message%"
+    not-in-revise: "&4&l[РЕПОРТЫ] &fВы не находитесь на проверке."
+
+  chat:
+    not-sent: "&c> &fСообщение не было отправлено так как получатель не в сети."
+    moderator:
+      chat: "\n &e[&6%player% &7» &6Вы&e] &7» &c%message%\n"
+      chat-from: "\n &e[&6Вы &7» &6%player%&e] &7» &c%message%\n"
+    target:
+      chat: "\n &e[&6Вы &7» &6Проверяющий&e] &7» &c%message%\n"
+      chat-from: "\n &e[&6Проверяющий &7» &6Вы&e] &7» &c%message%\n"
+    hover:
+      copy: "&7Нажмите, чтобы скопировать"
+
+bossbar:
+  moderator:
+    title:
+      pending: "&cОжидаем движение игрока.."
+      started: "&eУ игрока осталось времени: &6%time%"
+      remote: "&6Вы проверяете игрока: &c%player%"
+    values:
+      color: RED
+      style: SOLID
+  target:
+    title:
+      started: "&eУ вас осталось времени: &6%time%"
+      remote: "&cВы находитесь на проверке"
+    values:
+      color: RED
+      style: SOLID
+  mod-left:
+    title: "&eОжидайте %time%"
+    values:
+      color: WHITE
+      style: SOLID
