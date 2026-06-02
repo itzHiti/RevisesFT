@@ -1,14 +1,13 @@
 # RevisesFT
 
-Плагин для проверок игроков на читы — спародирован с сервера FunTime.
-
-Модератор вызывает подозреваемого командой, игрока «замораживает» и телепортирует в проверочную комнату, между ними открывается приватный чат, а сверху у обоих висит боссбар с таймером. По итогу модератор выносит вердикт — игрок либо получает награду за честную игру, либо автоматическое наказание (`warn` / `tempban` / `ban`) согласно правилам сервера. 
-
-> [!NOTE]
-> Все проверки пишутся в базу данных.
-
 ![Version](https://img.shields.io/github/v/release/itzHiti/RevisesFT)
 ![Downloads](https://img.shields.io/github/downloads/itzHiti/RevisesFT/total)
+
+Плагин для проверок игроков на читы — спародирован с сервера FunTime.
+
+Модератор вызывает подозреваемого командой, игрока «замораживает» и телепортирует в проверочную комнату, между ними открывается приватный чат, а сверху у обоих висит боссбар с таймером.
+По итогу модератор выносит вердикт — игрок либо получает награду за честную игру, либо автоматическое наказание (`warn` / `tempban` / `ban`) согласно правилам сервера. 
+Все проверки пишутся в базу данных.
 
 ---
 
@@ -80,6 +79,8 @@
 3. Запустите сервер — сгенерируются `config.yml` и `lang.yml`.
 4. Настройте комнаты, спавн, наказания и тексты под свой сервер, затем перезапустите плагин.
 
+---
+
 > [!NOTE]
 > Для корректной работы плагина необходима Java 16+ (плагин компилируется под Java 16).
 
@@ -132,8 +133,6 @@ gradlew.bat build
 
 ## Статус и планы
 
-Реализовано ядро ревайзов: фриз, таймеры, боссбары, приватный чат, комнаты, вердикты, наказания, награды, БД и логи.
-
 Из задуманного **пока не реализовано** (есть только заготовки):
 
 - **Discord-интеграция.** В `utils/DiscordWebhook.java` лежит только утилита вебхука. Нет конфига Discord, бота, проверки логина/пароля игрока, авто-`remote` при заходе игрока в Discord, выдачи и отзыва прав на голосовой канал.
@@ -160,3 +159,9 @@ src/main/resources/             # plugin.yml, config.yml, lang.yml
 
 ## Скришноты
 
+<img width="572" height="223" alt="image" src="https://github.com/user-attachments/assets/83fc89ad-2e7c-423f-96a2-6ac6dab696e7" />
+<img width="522" height="187" alt="image" src="https://github.com/user-attachments/assets/0df40ab6-3d12-472c-a6a2-20d103093ed6" />
+<img width="532" height="322" alt="image" src="https://github.com/user-attachments/assets/353c8a76-ce79-42d9-a810-d55cde00f98e" />
+<img width="560" height="380" alt="image" src="https://github.com/user-attachments/assets/605e9fb8-b45d-426e-accf-0bf113862585" />
+<img width="1420" height="422" alt="image" src="https://github.com/user-attachments/assets/d2b8f3fb-5f75-4b50-b001-cd0d2d71aa3f" />
+<img width="316" height="171" alt="image" src="https://github.com/user-attachments/assets/1b32526f-536b-4082-aacd-6158ddf895f1" />
